@@ -1,8 +1,10 @@
+import mainLogo from "../assets/Logo.svg"
+
 const Footer = () => {
   return (
     <footer>
       <div>
-        <img src="" alt="Little Lemon logo" />
+        <img src={mainLogo} alt="Little Lemon logo" />
       </div>
       <div>
         <h3>Categorie</h3>

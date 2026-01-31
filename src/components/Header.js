@@ -1,8 +1,10 @@
+import mainLogo from "../assets/Logo.svg"
+
 const Header = ({children}) => {
   return (
     <header>
       <div>
-        <img src="" alt="Little Lemon logo" />
+        <img src={mainLogo} alt="Little Lemon logo" />
       </div>
       { children }
     </header>
