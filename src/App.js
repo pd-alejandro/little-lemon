@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header>
-        <Navbar />
+        {(isOpen) => <Navbar isOpen={isOpen}/>}
       </Header>
       <Main />
       <Footer />
