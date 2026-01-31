@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import restaurantFood from "../assets/restauranfood.jpg";
 const CallToAction = () => {
   return (
@@ -9,7 +10,8 @@ const CallToAction = () => {
           Little Lemon is a charming neighborhood bistro that serves simple food
           and classic cocktails.
         </p>
-        <button>Reserve a table</button>
+        {/* <button>Reserve a table</button> */}
+        <Link to="/reservations" className="btn">Reserve a table</Link>
       </div>
       <div>
         <div className="image-wrapper">

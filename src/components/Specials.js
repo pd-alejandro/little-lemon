@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Card = () => {
   return (
     <div className="card">
@@ -22,7 +24,7 @@ const Specials = () => {
           <h2 className="section-title">This week specials!</h2>
         </div>
         <div>
-          <button>Online menu</button>
+          <Link to="/menu" className="btn">Online menu</Link>
         </div>
       </div>
       <div className="specials__list">
