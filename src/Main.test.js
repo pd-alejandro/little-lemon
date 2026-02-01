@@ -8,7 +8,8 @@ test("initializeTimes function", () => {
 });
 
 test("updateTimes function", () => {
-  const updTimes = updateTimes();
+  const mock = { type: "INITIALIZE", payload: ["17:00"] };
+  const updTimes = updateTimes(null, mock);
 
   expect(Array.isArray(updTimes)).toBe(true);
   expect(updTimes.length).toBeGreaterThan(0);

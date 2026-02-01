@@ -38,7 +38,7 @@ const Header = ({ children }) => {
           <Link to="/" className="block-link"></Link>
         </div>
         <div className="basket-icon">
-          <button>
+          <button aria-label="Basket">
             <img src={basketIcon} alt="" />
           </button>
         </div>

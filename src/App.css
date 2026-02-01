@@ -183,15 +183,20 @@ span {
     color 0.1s ease-out,
     transform 0.1s ease-out;
 
+  &[disabled] {
+  color: #edefee;
+  background-color: #b3b3b3;
+  }
+
   @media (hover: hover) {
-    &:hover {
+    &:not([disabled]):hover {
       color: var(--primary-color-1);
       background-color: var(--highlight-color-1);
       transform: scale(1.05);
     }
   }
 
-  &:active {
+  &:not[disabled]:active {
     color: var(--highlight-color-1);
     background-color: var(--highlight-color-2);
     transform: scale(0.95);
@@ -383,7 +388,7 @@ nav {
   margin: 2rem 0 0;
 
   @media (min-width: 768px) {
-  grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .testimonial {

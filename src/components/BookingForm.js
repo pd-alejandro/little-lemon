@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const BookingForm = (props) => {
@@ -6,8 +6,20 @@ const BookingForm = (props) => {
   const [guests, setGuests] = useState();
   const [resTime, setRestTime] = useState();
   const [occasion, setOccasion] = useState();
+  const [isValid, setIsValid] = useState(false);
 
   const navigate = useNavigate();
+
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (!isValid && formRef.current.checkValidity() === true) {
+      setIsValid(true);
+    }
+    if (isValid && formRef.current.checkValidity() === false) {
+      setIsValid(false)
+    }
+  }, [date, guests, resTime]);
 
   const timeOptions = props.times.map((time) => (
     <option key={time}>{time}</option>
@@ -18,12 +30,13 @@ const BookingForm = (props) => {
     if (props.submit()) navigate("/confirmed");
   };
   return (
-    <form style={formStyles} onSubmit={handleSubmit}>
+    <form style={formStyles} onSubmit={handleSubmit} ref={formRef}>
       <label htmlFor="res-date">Date</label>
       <div className="input-group">
         <input
           type="date"
           id="res-date"
+          required
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
@@ -33,6 +46,7 @@ const BookingForm = (props) => {
         <select
           id="res-time"
           value={resTime}
+          required
           onChange={(e) => setRestTime(e.target.value)}>
           {timeOptions}
         </select>
@@ -46,20 +60,25 @@ const BookingForm = (props) => {
           max="10"
           id="guests"
           value={guests}
+          required
           onChange={(e) => setGuests(e.target.value)}
         />
       </div>
-      <label htmlFor="occasion">Occasion</label>{" "}
+      <label htmlFor="occasion">Occasion (optional)</label>{" "}
       <div className="input-group">
         <select
           id="occasion"
           value={occasion}
           onChange={(e) => setOccasion(e.target.value)}>
+          <option disabled default>
+            Select a occasion
+          </option>
           <option>Birthday</option>
+          <option>Engagement</option>
           <option>Anniversary</option>
         </select>
       </div>
-      <button className="btn">Make your reservation</button>
+      <button className="btn" disabled={!isValid}>Make your reservation</button>
     </form>
   );
 };
