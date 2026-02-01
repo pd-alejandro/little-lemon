@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header>
-        {(isOpen) => <Navbar isOpen={isOpen}/>}
+        {(isOpen, handleClick) => <Navbar isOpen={isOpen} handleClick={handleClick} />}
       </Header>
       <Main />
       <Footer />

@@ -13,7 +13,7 @@ const Card = (props) => {
         <h3 className="card__title">{props.name}</h3>
         <span className="card__price">${props.price}</span>
         <p className="card__description">{props.description}</p>
-        <p className="card__link">Order for delivery</p>
+        <a href="/" className="card__link block-link">Order for delivery <span className="delivery-icon"></span></a>
       </div>
     </div>
   );

@@ -5,22 +5,22 @@ const Navbar = (props) => {
       <nav className={props.isOpen ? "open" : ""}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={props.handleClick}>Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" onClick={props.handleClick}>About</Link>
           </li>
           <li>
-            <Link to="/menu">Menu</Link>
+            <Link to="/menu" onClick={props.handleClick}>Menu</Link>
           </li>
           <li>
-            <Link to="/reservations">Reservations</Link>
+            <Link to="/reservations" onClick={props.handleClick}>Reservations</Link>
           </li>
           <li>
-            <Link to="/order">Order online</Link>
+            <Link to="/order" onClick={props.handleClick}>Order online</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login" onClick={props.handleClick}>Login</Link>
           </li>
         </ul>
       </nav>

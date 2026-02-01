@@ -8,11 +8,11 @@ const Chicago = () => {
         <div>
           <h2>Little Lemon</h2>
           <p className="subtitle">Chicago</p>
-          <p>
+          <p className="description">
             Little Lemon is a charming neighborhood bistro that serves simple
             food and classic cocktails.
           </p>
-          <p>
+          <p className="description">
             Little Lemon is a charming neighborhood bistro that serves simple
             food and classic cocktails.
           </p>
